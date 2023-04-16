@@ -62,7 +62,7 @@ def get_occurrences(pattern, text):
         
         if hash_pattern == hash_text:
             if pattern == text[i:i+lpattern]:
-                arr.append(i+1)
+                arr.append(i)
                 get_occurrences(pattern, text[i:ltext-1])
 
     # and return an iterable variable
