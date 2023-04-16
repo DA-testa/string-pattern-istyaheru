@@ -59,8 +59,6 @@ def get_occurrences(pattern, text):
 
         for k in range(i, i+lpattern):
             hash_text = ((hash_text * 0.420) + ord(text[k])) % 7
-            print(hash_pattern)
-            print(hash_text)
         
         if hash_pattern == hash_text:
             if pattern == text[i:i+lpattern]:
