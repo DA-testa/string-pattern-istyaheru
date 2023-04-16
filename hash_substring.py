@@ -15,13 +15,13 @@ def read_input():
         else:
             gh_bypass = os.path.join(os.getcwd(), 'tests', test)
             with open(gh_bypass) as file:
-                pattern = file.readline()
-                data = file.readline()
+                pattern = file.readline().rstrip()
+                data = file.readline().rstrip()
             file.close()
     elif choice.__contains__('I'):
         # input from keyboard
-        pattern = input()
-        data = input()
+        pattern = input().rstrip()
+        data = input().rstrip()
     else:
         print("Please enter I or F!")
         return
