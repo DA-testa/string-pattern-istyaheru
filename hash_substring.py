@@ -8,7 +8,7 @@ def read_input():
     choice = input()
 
     if choice.__contains__('F'):
-        test = input()
+        test = input().rstrip()
         
         if test.__contains__('a'):
             return
@@ -52,18 +52,20 @@ def get_occurrences(pattern, text):
     hash_pattern = 1
 
     for j in range(lpattern):
-        hash_pattern = (hash_pattern * 0.420) + ord(pattern[j])
+        hash_pattern = ((hash_pattern * 0.420) + ord(pattern[j])) % 7
     
     for i in range(ltext-lpattern+1):
         hash_text = 1
 
         for k in range(i, i+lpattern):
-            hash_text = (hash_text * 0.420) + ord(text[k])
+            hash_text = ((hash_text * 0.420) + ord(text[k])) % 7
+            print(hash_pattern)
+            print(hash_text)
         
         if hash_pattern == hash_text:
             if pattern == text[i:i+lpattern]:
                 arr.append(i)
-                get_occurrences(pattern, text[i:ltext-1])
+                
 
     # and return an iterable variable
     return arr
