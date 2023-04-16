@@ -1,5 +1,6 @@
 # Ēriks Lijurovs, 221RDB041, 16. grupa
 # python3
+import os
 
 def read_input():
     # this function needs to aquire input both from keyboard and file
@@ -16,13 +17,11 @@ def read_input():
             with open(gh_bypass) as file:
                 pattern = file.readline()
                 data = file.readline()
-                
             file.close()
     elif choice.__contains__('I'):
         # input from keyboard
         pattern = input()
         data = input()
-        
     else:
         print("Please enter I or F!")
         return
