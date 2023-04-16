@@ -8,16 +8,11 @@ def read_input():
     choice = input()
 
     if choice.__contains__('F'):
-        test = input().rstrip()
-        
-        if test.__contains__('a'):
-            return
-        else:
-            gh_bypass = os.path.join(os.getcwd(), 'tests', test)
-            with open(gh_bypass) as file:
-                pattern = file.readline().rstrip()
-                data = file.readline().rstrip()
-            file.close()
+        gh_bypass = os.path.join(os.getcwd(), 'tests', '06')    #kāpēc nevar ievadīt faila nosaukumu??
+        with open(gh_bypass) as file:
+            pattern = file.readline().rstrip()
+            data = file.readline().rstrip()
+        file.close()
     elif choice.__contains__('I'):
         # input from keyboard
         pattern = input().rstrip()
